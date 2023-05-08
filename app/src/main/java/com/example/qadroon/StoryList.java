@@ -23,7 +23,7 @@ import java.util.HashMap;
 
 public class StoryList extends AppCompatActivity {
     Button new_member;
-    String username,cat_id;
+    String username,usertype;
     ListView simpleList;
     ArrayAdapter<String> adapter;
     private final String URL = Server.ip + "getstories.php";
@@ -34,19 +34,23 @@ public class StoryList extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_story_list);
         username = getIntent().getStringExtra("id");
-        cat_id=getIntent().getStringExtra("cat_id");
+        usertype = getIntent().getStringExtra("usertype");
 
         simpleList = findViewById(R.id.memo_list);
         infos = new ArrayList<>();
 
         new_member = findViewById(R.id.new_member);
+
+        if(!usertype.equals("admin")){
+            new_member.setVisibility(View.GONE);
+        }
+
         new_member.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(StoryList.this, AddStory.class);
                 intent.putExtra("id",username);
                 intent.putExtra("op_type","add");
-                intent.putExtra("cat_id",cat_id);
                 startActivity(intent);
             }
         });
@@ -72,7 +76,6 @@ public class StoryList extends AppCompatActivity {
                 Connection con = new Connection();
                 HashMap<String, String> data = new HashMap<>();
                 data.put("id", username);
-                data.put("cat_id", cat_id);
 
                 String result = con.sendPostRequest(URL, data);
                 return result;
@@ -103,9 +106,9 @@ public class StoryList extends AppCompatActivity {
                             temp.setAdd_date(row.getString("add_date"));
                             temp.setDetails(row.getString("details"));
                             temp.setTitle(row.getString("title"));
-                            temp.setPerson(row.getString("person"));
+                            temp.setPerson(row.getString("person_name"));
                             temp.setImage(row.getString("image"));
-                            temp.setAudio(row.getString("audio"));
+                           // temp.setAudio(row.getString("audio"));
 
                             infos.add(temp);
                         }
@@ -123,6 +126,7 @@ public class StoryList extends AppCompatActivity {
                                 Intent intent = new Intent(StoryList.this, StoryDetails.class);
                                 intent.putExtra("id",username);
                                 intent.putExtra("info", infos.get(position));
+                                intent.putExtra("type", usertype);
 
                                 startActivity(intent);
                             }

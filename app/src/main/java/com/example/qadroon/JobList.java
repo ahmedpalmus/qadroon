@@ -23,7 +23,7 @@ import java.util.HashMap;
 
 public class JobList extends AppCompatActivity {
     Button new_member;
-    String username;
+    String username,type;
     ListView simpleList;
     ArrayAdapter<String> adapter;
     private final String URL = Server.ip + "getjobs.php";
@@ -35,11 +35,17 @@ public class JobList extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_job_list);
         username = getIntent().getStringExtra("id");
+        type = getIntent().getStringExtra("type");
 
         simpleList = findViewById(R.id.memo_list);
         infos = new ArrayList<>();
 
         new_member = findViewById(R.id.new_member);
+
+        if(!type.equals("company")){
+            new_member.setVisibility(View.GONE);
+        }
+
         new_member.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -71,6 +77,7 @@ public class JobList extends AppCompatActivity {
                 Connection con = new Connection();
                 HashMap<String, String> data = new HashMap<>();
                 data.put("id", username);
+                data.put("type", type);
 
                 String result = con.sendPostRequest(URL, data);
                 return result;
@@ -99,13 +106,14 @@ public class JobList extends AppCompatActivity {
 
                             temp.setMemo_id(row.getString("job_id"));
                             temp.setAdd_date(row.getString("add_date"));
-                            temp.setDetails(row.getString("details"));
+                            temp.setDetails(row.getString("description"));
                             temp.setTitle(row.getString("title"));
-                            temp.setFullname(row.getString("fullname"));
+                            temp.setFullname(row.getString("comp_name"));
                             temp.setSalary(row.getString("salary"));
-                            temp.setAccepted(row.getString("accepted"));
+                            temp.setAccepted(row.getString("accepted_disability"));
                             temp.setQualification(row.getString("qualification"));
                             temp.setStatus(row.getString("status"));
+                            temp.setUsername(row.getString("company_id"));
 
                             infos.add(temp);
                         }
@@ -120,9 +128,10 @@ public class JobList extends AppCompatActivity {
                             @Override
                             public void onItemClick(AdapterView<?> parent, View view, int position, long idd) {
 
-                                Intent intent = new Intent(JobList.this, StoryDetails.class);
+                                Intent intent = new Intent(JobList.this, JobDetails.class);
                                 intent.putExtra("id",username);
                                 intent.putExtra("info", infos.get(position));
+                                intent.putExtra("type", type);
 
                                 startActivity(intent);
                             }

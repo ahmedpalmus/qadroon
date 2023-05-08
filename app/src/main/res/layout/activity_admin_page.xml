@@ -51,24 +51,25 @@
             <Button
                 android:id="@+id/user_content"
                 android:layout_width="match_parent"
-                android:layout_margin="5dp"
                 android:layout_height="wrap_content"
+                android:layout_margin="5dp"
                 android:background="@drawable/box_3"
-                android:padding="10dp"
-                android:fontFamily="@font/jetbrains_mono_semibold"
-                android:text="Content Management"
                 android:drawableLeft="@drawable/train"
+                android:drawablePadding="10dp"
+                android:fontFamily="@font/jetbrains_mono_semibold"
+                android:padding="10dp"
+                android:text="Content Management"
                 android:textAllCaps="false"
                 android:textColor="#0723B3"
-                android:drawablePadding="10dp"
                 android:textSize="20sp" />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"/>
 
             <Button
-                android:id="@+id/user_supp"
+                android:id="@+id/user_manage"
                 android:layout_width="match_parent"
                 android:layout_margin="5dp"
                 android:layout_height="wrap_content"

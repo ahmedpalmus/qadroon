@@ -249,7 +249,6 @@ public class AddStory extends AppCompatActivity {
                 data.put("op_type", op_type);
                 data.put("memo_id", memo_id);
                 data.put("audio", Audio);
-
                 data.put("image", Image);
 
                 String result = con.sendPostRequest(URL, data);

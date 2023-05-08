@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
                 }else if (result.equals("block")) {
                     Toast.makeText(getApplicationContext(), "This Account is blocked", Toast.LENGTH_LONG).show();
                 } else if (result.equalsIgnoreCase("user")) {
-                    Intent intent = new Intent(MainActivity.this, UserReg.class);
+                    Intent intent = new Intent(MainActivity.this, UserPage.class);
                     intent.putExtra("id", username);
                     startActivity(intent);
                 } else if (result.equalsIgnoreCase("company")) {

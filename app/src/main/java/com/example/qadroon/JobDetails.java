@@ -17,36 +17,43 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class StoryDetails extends AppCompatActivity {
+public class JobDetails extends AppCompatActivity {
     String username,type;
-    Info Info;
-    TextView title, fullname, add_date, detail;
-    ImageView imageView;
-    Button edit,cancel;
+    Memo Info;
+    TextView title, fullname, add_date,qual,accepted, detail, salary;
+    Button edit,apply,cancel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_story_details);
+        setContentView(R.layout.activity_job_details);
         username = getIntent().getStringExtra("id");
-        Info = (Info) getIntent().getSerializableExtra("info");
         type = getIntent().getStringExtra("type");
+        Info = (Memo) getIntent().getSerializableExtra("info");
 
         title = findViewById(R.id.mem_title);
+        salary = findViewById(R.id.mem_salary);
         add_date = findViewById(R.id.mem_add);
-        fullname = findViewById(R.id.mem_username);
         detail = findViewById(R.id.mem_details);
-        imageView = findViewById(R.id.mem_image);
+        fullname = findViewById(R.id.mem_username);
+        qual = findViewById(R.id.mem_qual);
+        accepted = findViewById(R.id.mem_accept);
+
         edit = findViewById(R.id.fm_edit);
+        apply = findViewById(R.id.fm_apply);
         cancel = findViewById(R.id.fm_cancel);
 
-if(type.equals("admin")){
-    edit.setVisibility(View.VISIBLE);
-}
+        if(!type.equals("user")){
+            edit.setVisibility(View.VISIBLE);
+            apply.setVisibility(View.GONE);
+        }else {
+            edit.setVisibility(View.GONE);
+            apply.setVisibility(View.VISIBLE);
+        }
         edit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(StoryDetails.this, AddStory.class);
+                Intent intent = new Intent(JobDetails.this, AddJob.class);
                 intent.putExtra("id", username);
                 intent.putExtra("op_type", "edit");
                 intent.putExtra("info", Info);
@@ -63,38 +70,13 @@ if(type.equals("admin")){
         });
 
         title.setText(Info.getTitle());
-        fullname.setText("About: " + Info.getPerson());
-        add_date.setText(Info.getAdd_date());
+        salary.setText(Info.getSalary());
+        accepted.setText(Info.getAccepted());
+        qual.setText(Info.getQualification());
         detail.setText(Info.getDetails());
-
-        getImage(Info.getImage(), imageView);
+        fullname.setText("By: " + Info.getUsername());
+        add_date.setText(Info.getAdd_date());
 
     }
 
-    public void getImage(final String img, final ImageView viewHolder) {
-
-        class packTask extends AsyncTask<Void, Void, Bitmap> {
-
-            @Override
-            protected Bitmap doInBackground(Void... voids) {
-                Bitmap image1 = null;
-                java.net.URL url = null;
-                try {
-                    url = new URL(Server.ip + img);
-                    image1 = BitmapFactory.decodeStream(url.openConnection().getInputStream());
-                } catch (MalformedURLException e) {
-                    e.printStackTrace();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-                return image1;
-            }
-
-            protected void onPostExecute(Bitmap image) {
-                viewHolder.setImageBitmap(image);
-            }
-        }
-        packTask t = new packTask();
-        t.execute();
-    }
 }
