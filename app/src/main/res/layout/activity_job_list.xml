@@ -1,9 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".JobList">
+    tools:context=".JobList"
+    android:orientation="vertical"
+    android:background="@drawable/box_6"
+    android:padding="5dp"
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    >
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Available Jobs"
+        android:textSize="25dp"
+        android:textColor="#fff"
+        android:background="@drawable/gradient_blue"
+        android:gravity="center_vertical"
+        android:fontFamily="@font/timesbd"
+        android:drawableRight="@drawable/train"
+        android:padding="10dp"/>
+    <Button
+        android:id="@+id/new_member"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:padding="5dp"
+        android:layout_margin="3dp"
+        android:text="New"
+        android:background="@drawable/gradient_light"
+        android:textAllCaps="false"
+        android:drawableLeft="@drawable/add"
+        android:drawablePadding="5dp"
+        android:textSize="18sp"
+        android:textColor="#191213"
+        />
+    <ListView
+        android:id="@+id/memo_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+
+</LinearLayout>

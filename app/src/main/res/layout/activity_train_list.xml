@@ -33,8 +33,7 @@
         android:textAllCaps="false"
         android:drawableLeft="@drawable/add"
         android:drawablePadding="5dp"
-        android:textSize="20sp"
-        android:fontFamily="@font/aleo"
+        android:textSize="18sp"
         android:textColor="#191213"
         />
     <ListView

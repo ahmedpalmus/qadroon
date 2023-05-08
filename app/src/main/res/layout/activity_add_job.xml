@@ -10,7 +10,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="A new Job"
+        android:text="Add a new Job"
         android:textSize="25dp"
         android:textColor="#fff"
         android:background="@drawable/gradient_blue"
@@ -71,7 +71,7 @@
                     android:textAlignment="center"
                     />
                 <EditText
-                    android:id="@+id/fm_place"
+                    android:id="@+id/fm_salary"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="3"
@@ -106,7 +106,7 @@
                 android:layout_margin="10dp"
                 />
             <TextView
-                android:id="@+id/l54"
+                android:id="@+id/l4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
