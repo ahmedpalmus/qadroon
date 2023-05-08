@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UserPage"
+    android:background="@drawable/box_6"
+    android:orientation="vertical"
+    >
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/logo"
+        android:textSize="25dp"
+        android:textColor="#fff"
+        android:background="@drawable/gradient_blue"
+        android:gravity="center_vertical"
+        android:fontFamily="@font/timesbd"
+        android:drawableRight="@drawable/admin"
+        android:padding="10dp"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="40dp"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/user_videos"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/box_3"
+                    android:drawableBottom="@drawable/video"
+                    android:drawablePadding="10dp"
+                    android:fontFamily="@font/jetbrains_mono_semibold"
+                    android:padding="15dp"
+                    android:text="Videos"
+                    android:textAllCaps="false"
+                    android:textColor="#0723B3"
+                    android:textSize="20sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+
+                    android:id="@+id/user_stories"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_margin="5dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/box_3"
+                    android:textAllCaps="false"
+                    android:fontFamily="@font/jetbrains_mono_semibold"
+                    android:drawableBottom="@drawable/success"
+                    android:padding="15dp"
+                    android:text="Stories"
+                    android:textColor="#0723B3"
+                    android:drawablePadding="10dp"
+                    android:textSize="20sp"/>
+
+            </LinearLayout>
+            <Button
+                android:id="@+id/user_train"
+                android:layout_width="match_parent"
+                android:layout_margin="5dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/box_3"
+                android:padding="15dp"
+                android:fontFamily="@font/jetbrains_mono_semibold"
+                android:text="Training material"
+                android:drawableBottom="@drawable/train"
+                android:textAllCaps="false"
+                android:textColor="#0723B3"
+                android:drawablePadding="10dp"
+                android:textSize="20sp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"/>
+
+
+
+        </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>
