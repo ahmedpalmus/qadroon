@@ -13,6 +13,20 @@
         android:theme="@style/Theme.Qadroon"
         tools:targetApi="31">
         <activity
+            android:name=".JobList"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".AddJob"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".VideoDetails"
             android:exported="false">
             <meta-data
