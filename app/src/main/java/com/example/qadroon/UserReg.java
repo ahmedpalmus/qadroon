@@ -18,10 +18,10 @@ import java.util.HashMap;
 
 public class UserReg extends AppCompatActivity {
 
-    EditText userN, pass, pass2, perName, phone, email,eaddress,edisability;
-    TextView l1, l2, l3, l4, l5, l6,l7,l8;
+    EditText userN, pass, pass2, perName, phone, email,eaddress,edisability,edu,skill,expe;
+    TextView l1, l2, l3, l4, l5, l6,l7,l8,l9,l10,l11;
 
-    String user, password, name, thePhone, Email,address,disability;
+    String user, password, name, thePhone, Email,address,disability,eduaction,skills,experience;
     String URL = Server.ip + "register.php";
     Button reg, cancel;
 
@@ -38,6 +38,10 @@ public class UserReg extends AppCompatActivity {
         eaddress = findViewById(R.id.reg_address);
         edisability = findViewById(R.id.reg_disability);
 
+        edu = findViewById(R.id.reg_edu);
+        skill = findViewById(R.id.reg_skills);
+        expe = findViewById(R.id.reg_exp);
+
         l1 = findViewById(R.id.l1);
         l2 = findViewById(R.id.l2);
         l3 = findViewById(R.id.l3);
@@ -46,6 +50,9 @@ public class UserReg extends AppCompatActivity {
         l6 = findViewById(R.id.l6);
         l7 = findViewById(R.id.l7);
         l8 = findViewById(R.id.l8);
+        l9 = findViewById(R.id.l8);
+        l10 = findViewById(R.id.l8);
+        l11 = findViewById(R.id.l8);
 
         reg = findViewById(R.id.reg_reg);
         cancel = findViewById(R.id.reg_cancel);
@@ -83,6 +90,13 @@ public class UserReg extends AppCompatActivity {
             l7.setTextColor(Color.BLACK);
             l8.setText(getResources().getString(R.string.disability));
             l8.setTextColor(Color.BLACK);
+
+            l9.setText("Education");
+            l9.setTextColor(Color.BLACK);
+            l10.setText("Skills");
+            l10.setTextColor(Color.BLACK);
+            l11.setText("Experience");
+            l11.setTextColor(Color.BLACK);
             user = userN.getText().toString().trim();
             password = pass.getText().toString().trim();
             String password2 = pass2.getText().toString().trim();
@@ -91,6 +105,10 @@ public class UserReg extends AppCompatActivity {
             Email = email.getText().toString().trim();
             address = eaddress.getText().toString().trim();
             disability = edisability.getText().toString().trim();
+
+            eduaction = edu.getText().toString().trim();
+            skills = skill.getText().toString().trim();
+            experience = expe.getText().toString().trim();
 
             boolean error = false;
             if (user.length() < 3 || user.contains(" ")) {
@@ -148,6 +166,21 @@ public class UserReg extends AppCompatActivity {
                 String temp = l8.getText().toString();
                 l8.setText(temp + " *\nEnter valid disability");
                 l8.setTextColor(Color.RED);
+            }if (eduaction.length() < 3) {
+                error = true;
+                String temp = l9.getText().toString();
+                l9.setText(temp + " *\nEnter valid education");
+                l9.setTextColor(Color.RED);
+            }if (skills.length() < 3) {
+                error = true;
+                String temp = l10.getText().toString();
+                l10.setText(temp + " *\nEnter valid skills");
+                l10.setTextColor(Color.RED);
+            }if (experience.length() < 3) {
+                error = true;
+                String temp = l11.getText().toString();
+                l11.setText(temp + " *\nEnter valid experience");
+                l11.setTextColor(Color.RED);
             }
             if (!error) {
                 Registration();
@@ -180,6 +213,9 @@ public class UserReg extends AppCompatActivity {
                 data.put("email", Email);
                 data.put("address", address);
                 data.put("disability", disability);
+                data.put("eduaction", eduaction);
+                data.put("skills", skills);
+                data.put("experience", experience);
 
                 String result = con.sendPostRequest(URL, data);
                 return result;

@@ -108,7 +108,9 @@ public class StoryList extends AppCompatActivity {
                             temp.setTitle(row.getString("title"));
                             temp.setPerson(row.getString("person_name"));
                             temp.setImage(row.getString("image"));
-                           // temp.setAudio(row.getString("audio"));
+                            temp.setRating(row.getString("rating"));
+                            temp.setLikes(row.getString("likes"));
+                            temp.setDslikes(row.getString("dislikes"));
 
                             infos.add(temp);
                         }

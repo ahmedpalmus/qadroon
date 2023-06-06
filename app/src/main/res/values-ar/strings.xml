@@ -62,4 +62,6 @@
     <string name="age">Age</string>
     <string name="gender">Gender</string>
     <string name="disability">Disability</string>
+    <string name="story_title">Story Title</string>
+    <string name="story_details">Story Details</string>
 </resources>

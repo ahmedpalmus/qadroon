@@ -157,7 +157,7 @@ public class AddJob extends AppCompatActivity {
             err = true;
         }
         if (details.length() < 5) {
-            l4.setTextColor(Color.RED);
+            l5.setTextColor(Color.RED);
             err = true;
         }
         if (!err) {

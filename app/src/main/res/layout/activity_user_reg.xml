@@ -212,6 +212,69 @@
                 android:layout_marginBottom="10dp"
                 android:layout_marginHorizontal="10dp"
                 />
+            <TextView
+                android:id="@+id/l9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Education"
+                android:paddingHorizontal="5dp"
+                android:textColor="@color/black"
+                android:gravity="center_vertical"
+                android:textSize="18dp"
+                android:layout_marginHorizontal="10dp"
+                />
+            <EditText
+                android:background="@drawable/box_3"
+                android:id="@+id/reg_edu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:textSize="18dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginHorizontal="10dp"
+                />
+            <TextView
+                android:id="@+id/l10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Skills"
+                android:paddingHorizontal="5dp"
+                android:textColor="@color/black"
+                android:gravity="center_vertical"
+                android:textSize="18dp"
+                android:layout_marginHorizontal="10dp"
+                />
+            <EditText
+                android:background="@drawable/box_3"
+                android:id="@+id/reg_skills"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:textSize="18dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginHorizontal="10dp"
+                />
+            <TextView
+                android:id="@+id/l11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Experience"
+                android:paddingHorizontal="5dp"
+                android:textColor="@color/black"
+                android:gravity="center_vertical"
+                android:textSize="18dp"
+                android:layout_marginHorizontal="10dp"
+                />
+            <EditText
+                android:background="@drawable/box_3"
+                android:id="@+id/reg_exp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:textSize="18dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginHorizontal="10dp"
+                />
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

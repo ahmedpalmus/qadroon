@@ -16,7 +16,7 @@
         android:background="@drawable/gradient_blue"
         android:gravity="center_vertical"
         android:fontFamily="@font/timesbd"
-        android:drawableRight="@drawable/success"
+        android:drawableRight="@drawable/job"
         android:padding="10dp"/>
     <ScrollView
         android:layout_width="match_parent"
@@ -35,7 +35,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/title"
+                    android:text="Job Title"
                     android:padding="10dp"
                     android:textColor="#000"
                     android:textSize="18sp"
@@ -50,7 +50,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
-                android:text="By: Omar Ali"
+                android:text="By: Company name"
                 android:textAlignment="center"
                 android:textColor="#000"
                 android:textSize="16sp" />
@@ -75,7 +75,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="25/05/2022"
+                    android:text="25/05/2023"
                     android:padding="10dp"
                     android:textColor="#000"
                     android:textSize="16sp"
@@ -105,7 +105,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="The store"
+                    android:text="8000"
                     android:padding="10dp"
                     android:textColor="#000"
                     android:textSize="16sp"
@@ -202,7 +202,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-
             >
      <Button
          android:id="@+id/fm_apply"

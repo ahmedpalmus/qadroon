@@ -9,7 +9,7 @@ import android.widget.Button;
 
 public class AdminPage extends AppCompatActivity {
     String id;
-    Button my_jobs,user_content,user_manage,profile;
+    Button my_jobs,user_content,user_manage,profile,user_train;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,6 +20,7 @@ public class AdminPage extends AppCompatActivity {
         my_jobs=findViewById(R.id.user_jobs);
         user_content=findViewById(R.id.user_content);
         user_manage=findViewById(R.id.user_manage);
+        user_train=findViewById(R.id.user_train);
 
         profile=findViewById(R.id.user_prof);
 
@@ -27,6 +28,15 @@ public class AdminPage extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(AdminPage.this, JobList.class);
+                intent.putExtra("id", id);
+                intent.putExtra("type", "admin");
+                startActivity(intent);
+            }
+        });
+        my_jobs.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(AdminPage.this, TrainList.class);
                 intent.putExtra("id", id);
                 intent.putExtra("type", "admin");
                 startActivity(intent);
@@ -44,13 +54,17 @@ public class AdminPage extends AppCompatActivity {
         profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent intent = new Intent(AdminPage.this, Profile.class);
+                intent.putExtra("id", id);
+                startActivity(intent);
             }
         });
         user_manage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent intent = new Intent(AdminPage.this, UserType.class);
+                intent.putExtra("id", id);
+                startActivity(intent);
             }
         });
     }

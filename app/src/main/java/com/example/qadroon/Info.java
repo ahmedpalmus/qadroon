@@ -5,7 +5,66 @@ import java.io.Serializable;
 public class Info implements Serializable {
     private String info_id,title,owner_id,person,image,audio,details;
     private String info_type,add_date,qualification, disability,salary,address;
-    private String phone,email,field,start_date,end_date,status;
+    private String phone,email,field,start_date,end_date,status,comp_title,comp_id;
+    private String rating,likes,dslikes;
+
+private String  lat, lon;
+
+    public String getRating() {
+        return rating;
+    }
+
+    public void setRating(String rating) {
+        this.rating = rating;
+    }
+
+    public String getLikes() {
+        return likes;
+    }
+
+    public void setLikes(String likes) {
+        this.likes = likes;
+    }
+
+    public String getDslikes() {
+        return dslikes;
+    }
+
+    public void setDslikes(String dslikes) {
+        this.dslikes = dslikes;
+    }
+
+    public String getComp_id() {
+        return comp_id;
+    }
+
+    public void setComp_id(String comp_id) {
+        this.comp_id = comp_id;
+    }
+
+    public String getComp_title() {
+        return comp_title;
+    }
+
+    public void setComp_title(String comp_title) {
+        this.comp_title = comp_title;
+    }
+
+    public String getLat() {
+        return lat;
+    }
+
+    public void setLat(String lat) {
+        this.lat = lat;
+    }
+
+    public String getLon() {
+        return lon;
+    }
+
+    public void setLon(String lon) {
+        this.lon = lon;
+    }
 
     public String getInfo_id() {
         return info_id;

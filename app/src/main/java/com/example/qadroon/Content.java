@@ -35,13 +35,19 @@ public class Content extends AppCompatActivity {
         user_train.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent intent = new Intent(Content.this, TrainingMaterialList.class);
+                intent.putExtra("id", id);
+                intent.putExtra("usertype", "admin");
+                startActivity(intent);
             }
         });
         user_videos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent intent = new Intent(Content.this, VideoList.class);
+                intent.putExtra("id", id);
+                intent.putExtra("usertype", "admin");
+                startActivity(intent);
             }
         });
     }

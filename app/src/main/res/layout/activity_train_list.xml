@@ -13,7 +13,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Training Material"
+        android:text="Training Jobs"
         android:textSize="25dp"
         android:textColor="#fff"
         android:background="@drawable/gradient_blue"

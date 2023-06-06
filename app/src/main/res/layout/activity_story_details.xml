@@ -10,7 +10,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Job Details"
+        android:text="Story Details"
         android:textSize="25dp"
         android:textColor="#fff"
         android:background="@drawable/gradient_blue"
@@ -25,6 +25,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -35,7 +36,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/title"
+                    android:text="@string/story_title"
                     android:padding="10dp"
                     android:textColor="#000"
                     android:textSize="18sp"
@@ -44,12 +45,40 @@
                     />
 
             </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/mem_add"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Added in: 25/05/2023"
+                    android:padding="10dp"
+                    android:textColor="#000"
+                    android:gravity="center"
+                    android:textSize="16sp"
+                    />
+            </LinearLayout>
+            <RatingBar
+                android:numStars="5"
+                android:id="@+id/s_rate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:isIndicator="true"
+                android:rating="3.5"
+                android:layout_gravity="center"
+                android:scaleX="0.5"
+                android:scaleY="0.5"
+                />
             <ImageView
                 android:padding="10dp"
                 android:id="@+id/mem_image"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
-                android:src="@drawable/success"
+                android:src="@drawable/logo"
                 android:scaleType="fitCenter"
                 />
             <TextView
@@ -57,45 +86,19 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
-                android:text="Omar Ali"
+                android:text="Person Name"
                 android:textAlignment="center"
                 android:textColor="#000"
                 android:textStyle="bold"
                 android:textSize="18sp" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="2dp"
-                android:layout_marginHorizontal="10dp"
-                android:orientation="horizontal">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Added in: "
-                    android:padding="10dp"
-                    android:textColor="#000"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    />
-                <TextView
-                    android:id="@+id/mem_add"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="25/05/2022"
-                    android:padding="10dp"
-                    android:textColor="#000"
-                    android:textSize="16sp"
-                    />
-            </LinearLayout>
 
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Story Details"
+                android:text="@string/story_details"
                 android:padding="10dp"
                 android:textColor="#000"
                 android:textSize="16sp"
@@ -112,9 +115,79 @@
                 android:layout_margin="10dp"
                 android:textStyle="bold"
                 android:textColor="#5E35B1"
-
                 />
+            <LinearLayout
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginVertical="5dp"
+                android:gravity="center">
 
+                <ImageButton
+                    android:background="@color/white"
+                    android:id="@+id/likeButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_baseline_thumb_up_24"
+                    android:onClick="likeButtonClicked"/>
+
+                <TextView
+                    android:id="@+id/likeCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"/>
+
+                <ImageButton
+                    android:background="@color/white"
+                    android:id="@+id/dislikeButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_baseline_thumb_down_24"
+                    android:onClick="dislikeButtonClicked"/>
+
+                <TextView
+                    android:id="@+id/dislikeCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#CDB4FDFB"
+                android:elevation="5dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:text="Your Rating"
+                    android:padding="10dp"
+                    android:textStyle="bold"
+                    android:textColor="#000"
+                    android:textSize="18dp"
+                    android:textAlignment="textStart"
+                    android:drawablePadding="5dp"
+                    />
+                <RatingBar
+                    android:numStars="5"
+                    android:id="@+id/s_rating"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:rating="0"
+                    android:layout_gravity="center"
+                    android:scaleX="0.7"
+                    android:scaleY="0.7"
+                    />
+            </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -134,6 +207,7 @@
                     android:padding="10dp"
                     android:background="@drawable/box_7"
                     android:layout_marginHorizontal="10dp"/>
+
                 <Button
                     android:id="@+id/fm_cancel"
                     android:layout_marginHorizontal="10dp"

@@ -76,20 +76,7 @@
                     android:textSize="20sp"/>
 
             </LinearLayout>
-            <Button
-                android:id="@+id/user_train"
-                android:layout_width="match_parent"
-                android:layout_margin="5dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/box_3"
-                android:padding="15dp"
-                android:fontFamily="@font/jetbrains_mono_semibold"
-                android:text="Training material"
-                android:drawableBottom="@drawable/train"
-                android:textAllCaps="false"
-                android:textColor="#0723B3"
-                android:drawablePadding="10dp"
-                android:textSize="20sp" />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

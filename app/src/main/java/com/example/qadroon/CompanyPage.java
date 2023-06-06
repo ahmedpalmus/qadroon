@@ -35,25 +35,37 @@ public class CompanyPage extends AppCompatActivity {
         my_train.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent intent = new Intent(CompanyPage.this, TrainList.class);
+                intent.putExtra("id", id);
+                intent.putExtra("usertype", "company");
+                startActivity(intent);
             }
         });
         reqs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent intent = new Intent(CompanyPage.this, RequestType.class);
+                intent.putExtra("id", id);
+                intent.putExtra("usertype", "company");
+                startActivity(intent);
             }
         });
         profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent intent = new Intent(CompanyPage.this, Profile.class);
+                intent.putExtra("id", id);
+                intent.putExtra("type", "company");
+                startActivity(intent);
             }
         });
         support.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent intent=new Intent(CompanyPage.this,SupportList.class);
+                intent.putExtra("id",id);
+                intent.putExtra("type","user");
+                startActivity(intent);
             }
         });
     }

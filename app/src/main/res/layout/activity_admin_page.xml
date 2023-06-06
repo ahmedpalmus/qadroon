@@ -45,9 +45,24 @@
                 android:text="Job Management"
                 android:textColor="#0723B3"
                 android:drawablePadding="10dp"
+                android:textSize="20sp"/>
+            <Button
+
+                android:id="@+id/user_train"
+                android:layout_width="match_parent"
+                android:layout_margin="5dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/box_3"
+                android:gravity="center"
+                android:textAllCaps="false"
+                android:fontFamily="@font/jetbrains_mono_semibold"
+                android:drawableLeft="@drawable/job"
+                android:padding="10dp"
+                android:text="Training Management"
+                android:textColor="#0723B3"
+                android:drawablePadding="10dp"
 
                 android:textSize="20sp"/>
-
             <Button
                 android:id="@+id/user_content"
                 android:layout_width="match_parent"
@@ -80,6 +95,21 @@
                 android:drawableLeft="@drawable/support"
                 android:padding="10dp"
                 android:text="User Management"
+                android:textColor="#0723B3"
+                android:drawablePadding="10dp"
+                android:textSize="20sp"/>
+            <Button
+                android:id="@+id/reports"
+                android:layout_width="match_parent"
+                android:layout_margin="5dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/box_3"
+                android:gravity="center"
+                android:textAllCaps="false"
+                android:fontFamily="@font/jetbrains_mono_semibold"
+                android:drawableLeft="@drawable/report"
+                android:padding="10dp"
+                android:text="Reports"
                 android:textColor="#0723B3"
                 android:drawablePadding="10dp"
                 android:textSize="20sp"/>
