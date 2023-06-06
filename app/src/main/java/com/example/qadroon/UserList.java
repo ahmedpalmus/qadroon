@@ -163,6 +163,7 @@ public class UserList extends AppCompatActivity {
                                 } else {
                                     Intent intent = new Intent(UserList.this, Profile.class);
                                     intent.putExtra("id", memos.get(position).getUsername());
+                                    intent.putExtra("type",usertype);
                                     startActivity(intent);
 
                                 }

@@ -41,6 +41,9 @@ public class CompDetails extends AppCompatActivity {
         if (type.equals("admin")) {
             editText.setEnabled(true);
             linearLayout.setVisibility(View.VISIBLE);
+        }else{
+            editText.setEnabled(false);
+            linearLayout.setVisibility(View.GONE);
         }
 
         date.setText(support.getSupp_date());

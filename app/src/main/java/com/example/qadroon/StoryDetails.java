@@ -183,11 +183,8 @@ float rate;
                         likecount.setText(""+l);
                     }else{
                         int l=Integer.parseInt(Info.getDslikes())+1;
-
-                        dislikecount.setText(l);
-
+                        dislikecount.setText(l+"");
                     }
-
                 }
             }
         }

@@ -171,6 +171,8 @@
                     android:background="@drawable/box_4"
                     android:layout_marginHorizontal="10dp"/>
                 <Button
+                    android:onClick="editOnclick"
+
                     android:id="@+id/prof_cancel"
                     android:layout_marginHorizontal="10dp"
                     android:layout_width="0dp"

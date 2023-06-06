@@ -33,12 +33,12 @@ public class AdminPage extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        my_jobs.setOnClickListener(new View.OnClickListener() {
+        user_train.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(AdminPage.this, TrainList.class);
                 intent.putExtra("id", id);
-                intent.putExtra("type", "admin");
+                intent.putExtra("usertype", "admin");
                 startActivity(intent);
             }
         });

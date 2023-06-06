@@ -112,7 +112,6 @@ public class AddVideo extends AppCompatActivity {
     public void Save() {
 
         title = etitle.getText().toString().trim();
-        vid1_url = evid_url.getText().toString().trim();
 
         details = edetail.getText().toString().trim();
 

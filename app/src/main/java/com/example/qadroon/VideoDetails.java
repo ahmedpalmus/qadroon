@@ -54,7 +54,7 @@ public class VideoDetails extends AppCompatActivity {
 
         detail.setText(post.getDetails());
         add_date.setText("Added on: "+post.getAdd_time());
-
+System.out.println("<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/" + post.getVid_url() + "\" frameborder=\"0\" allowfullscreen></iframe>");
         vid_1.loadData("<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/" + post.getVid_url() + "\" frameborder=\"0\" allowfullscreen></iframe>", "text/html", "utf-8");
         vid_1.getSettings().setJavaScriptEnabled(true);
         vid_1.setWebChromeClient(new WebChromeClient() {

@@ -14,7 +14,7 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-public class MapActivity extends FragmentActivity implements GoogleMap.OnMapLongClickListener, OnMapReadyCallback {
+public class MapActivity extends FragmentActivity implements GoogleMap.OnMapLongClickListener, OnMapReadyCallback  {
     GoogleMap map;
     double lat, lon;
     String place;

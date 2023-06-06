@@ -36,7 +36,7 @@ public class VideoList extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_video_list);
         id=getIntent().getStringExtra("id");
-        usertype=getIntent().getStringExtra("type");
+        usertype=getIntent().getStringExtra("usertype");
         add = findViewById(R.id.new_member);
 
         if(!usertype.equals("admin")){
@@ -116,7 +116,7 @@ public class VideoList extends AppCompatActivity {
 
                         String res[] = new String[posts.size()];
                         for (int j = 0; j < posts.size(); j++) {
-                            res[j] =posts.get(j).getTitle()+"\nBy : "+posts.get(j).getAdd_time();
+                            res[j] =posts.get(j).getTitle()+"\n"+posts.get(j).getAdd_time();
                         }
                         adapter= new ArrayAdapter<>(getApplicationContext(), R.layout.vid_view, R.id.item_n, res);
                         simpleList.setAdapter(adapter);

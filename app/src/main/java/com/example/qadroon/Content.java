@@ -19,7 +19,7 @@ public class Content extends AppCompatActivity {
 
         user_videos=findViewById(R.id.user_videos);
         user_stories=findViewById(R.id.user_stories);
-        user_train=findViewById(R.id.user_train);
+        //user_train=findViewById(R.id.user_train);
 
 
         user_stories.setOnClickListener(new View.OnClickListener() {
@@ -32,7 +32,7 @@ public class Content extends AppCompatActivity {
             }
         });
 
-        user_train.setOnClickListener(new View.OnClickListener() {
+  /*      user_train.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(Content.this, TrainingMaterialList.class);
@@ -40,7 +40,7 @@ public class Content extends AppCompatActivity {
                 intent.putExtra("usertype", "admin");
                 startActivity(intent);
             }
-        });
+        });*/
         user_videos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -51,18 +51,19 @@ EditText rep;
         reject = findViewById(R.id.reject);
         call = findViewById(R.id.call);
 
-        if(!type.equals("user")){
+        if(type.equals("user")){
             accept.setVisibility(View.GONE);
             reject.setVisibility(View.GONE);
             del.setVisibility(View.VISIBLE);
-            fullname.setText(Info.getFullname());
-            phone_number=Info.getPhone();
-            rep.setEnabled(false);
-        }else {
-            del.setVisibility(View.GONE);
             the_name.setText("Company");
             fullname.setText(Info.getCom_name());
             phone_number=Info.getComp_phone();
+
+            rep.setEnabled(false);
+        }else {
+            del.setVisibility(View.GONE);
+            fullname.setText(Info.getFullname());
+            phone_number=Info.getPhone();
         }
         if(!Info.getState().equals("new")){
             accept.setVisibility(View.GONE);
@@ -86,7 +87,7 @@ EditText rep;
                 }
             }
         });
-        accept.setOnClickListener(new View.OnClickListener() {
+        reject.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 response=rep.getText().toString().trim();
