@@ -9,7 +9,7 @@ import android.widget.Button;
 
 public class AdminPage extends AppCompatActivity {
     String id;
-    Button my_jobs,user_content,user_manage,profile,user_train;
+    Button my_jobs,user_content,user_manage,profile,user_train,reports;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,6 +23,7 @@ public class AdminPage extends AppCompatActivity {
         user_train=findViewById(R.id.user_train);
 
         profile=findViewById(R.id.user_prof);
+        reports=findViewById(R.id.reports);
 
         my_jobs.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -39,6 +40,14 @@ public class AdminPage extends AppCompatActivity {
                 Intent intent = new Intent(AdminPage.this, TrainList.class);
                 intent.putExtra("id", id);
                 intent.putExtra("usertype", "admin");
+                startActivity(intent);
+            }
+        });
+
+        reports.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(AdminPage.this, ReportPage.class);
                 startActivity(intent);
             }
         });

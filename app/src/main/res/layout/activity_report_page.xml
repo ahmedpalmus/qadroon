@@ -1,65 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddStory"
     android:orientation="vertical"
-    >
+    tools:context=".ReportPage">
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="View Reports"
-        android:textSize="25dp"
-        android:textColor="#fff"
         android:background="@drawable/gradient_blue"
-        android:gravity="center_vertical"
-        android:fontFamily="@font/timesbd"
         android:drawableRight="@drawable/report"
-        android:padding="10dp"/>
+        android:fontFamily="@font/timesbd"
+        android:gravity="center_vertical"
+        android:padding="10dp"
+        android:text="View Reports"
+        android:textColor="#fff"
+        android:textSize="25dp" />
+
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
+
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="2dp"
                 android:layout_marginHorizontal="10dp"
+                android:layout_marginBottom="2dp"
                 android:orientation="horizontal">
+
                 <RadioButton
+                    android:id="@+id/jobs"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_margin="3dp"
+                    android:layout_weight="3"
+                    android:background="@drawable/gradient_light"
+                    android:padding="10dp"
+                    android:text="Jobs"
+                    android:textAllCaps="false"
+                    android:textColor="#02075E"
+                    android:textSize="16sp" />
+
+                <RadioButton
+                    android:id="@+id/training"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="3dp"
+                    android:layout_weight="3"
+                    android:background="@drawable/gradient_light"
+                    android:padding="10dp"
+                    android:text="Training"
+                    android:textAllCaps="false"
+                    android:textColor="#02075E"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginBottom="2dp"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/companies"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="3dp"
                     android:layout_weight="3"
                     android:background="@drawable/gradient_light"
                     android:padding="10dp"
                     android:text="Cmpanies"
                     android:textAllCaps="false"
                     android:textColor="#02075E"
-                    android:layout_margin="3dp"
-                    android:checked="true"
+                    android:textSize="16sp" />
 
-                    android:textSize="16sp" />
                 <RadioButton
+                    android:id="@+id/users"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="3"
-                    android:background="@drawable/gradient_light"
-                    android:padding="10dp"
-                    android:text="Jobs"
-                    android:textAllCaps="false"
                     android:layout_margin="3dp"
-                    android:textColor="#02075E"
-                    android:textSize="16sp" />
-                <RadioButton
-                    android:layout_margin="3dp"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
                     android:layout_weight="3"
                     android:background="@drawable/gradient_light"
                     android:padding="10dp"
@@ -68,91 +94,108 @@
                     android:textColor="#02075E"
                     android:textSize="16sp" />
             </LinearLayout>
+
             <LinearLayout
+                android:id="@+id/l1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="2dp"
                 android:layout_marginHorizontal="10dp"
-                android:orientation="horizontal">
+                android:layout_marginBottom="2dp"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
                 <TextView
-                    android:id="@+id/l2"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:padding="10dp"
                     android:text="Start Date"
-                    android:padding="10dp"
-                    android:textColor="#000"
-                    android:textStyle="bold"
-                    android:textSize="16sp"
                     android:textAlignment="center"
-                    />
+                    android:textColor="#000"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
                 <Button
+                    android:id="@+id/s_date"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_margin="3dp"
                     android:layout_weight="3"
                     android:background="@drawable/gradient_light"
                     android:padding="10dp"
                     android:text="Select Date"
                     android:textAllCaps="false"
                     android:textColor="#02075E"
-                    android:layout_margin="3dp"
 
                     android:textSize="16sp" />
             </LinearLayout>
+
             <LinearLayout
+                android:id="@+id/l2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="2dp"
                 android:layout_marginHorizontal="10dp"
-                android:orientation="horizontal">
+                android:layout_marginBottom="2dp"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="End Date"
-                    android:textStyle="bold"
                     android:padding="10dp"
+                    android:text="End Date"
+                    android:textAlignment="center"
                     android:textColor="#000"
                     android:textSize="16sp"
-                    android:textAlignment="center"
-                    />
-                <Button
-                    android:layout_width="0dp"
+                    android:textStyle="bold" />
 
+                <Button
+                    android:id="@+id/e_date"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_margin="3dp"
                     android:layout_weight="3"
                     android:background="@drawable/gradient_light"
                     android:padding="10dp"
                     android:text="Select Date"
                     android:textAllCaps="false"
                     android:textColor="#02075E"
-                    android:layout_margin="3dp"
 
                     android:textSize="16sp" />
             </LinearLayout>
+
             <Button
 
+                android:id="@+id/search"
                 android:layout_width="match_parent"
-
                 android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:background="@drawable/box_7"
+                android:padding="10dp"
                 android:text="Search"
                 android:textAllCaps="false"
                 android:textColor="#fff"
-                android:textSize="16sp"
-                android:padding="10dp"
-                android:background="@drawable/box_7"
-                android:layout_marginHorizontal="10dp"/>
+                android:textSize="16sp" />
+
             <TextView
-                android:id="@+id/l3"
+                android:id="@+id/result"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:padding="10dp"
+                android:text=""
                 android:textColor="#000"
                 android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <ListView
+                android:id="@+id/l3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:background="#F1EFEF"
-                android:layout_marginHorizontal="10dp"
-                />
+                android:padding="10dp"
+                android:textColor="#000"
+                android:textSize="16sp" />
 
 
         </LinearLayout>

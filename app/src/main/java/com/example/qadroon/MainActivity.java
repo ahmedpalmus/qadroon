@@ -49,6 +49,9 @@ public class MainActivity extends AppCompatActivity {
         }else if (v.getId() == R.id.log_reg) {
             Intent intent = new Intent(MainActivity.this, Register.class);
             startActivity(intent);
+        }else if (v.getId() == R.id.log_for) {
+            Intent intent = new Intent(MainActivity.this, ForgetPassword.class);
+            startActivity(intent);
         }
     }
 

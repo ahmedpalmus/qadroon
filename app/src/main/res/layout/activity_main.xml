@@ -131,7 +131,20 @@
                     android:textSize="18sp" />
 
             </LinearLayout>
+            <TextView
 
+                android:id="@+id/log_for"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:onClick="logClick"
+                android:background="@color/white"
+                android:padding="10dp"
+                android:textAlignment="textStart"
+                android:text="Forget Your password?"
+                android:textStyle="bold"
+                android:textAllCaps="false"
+                android:textColor="#0723BC"
+                android:textSize="18sp" />
 
         </LinearLayout>
     </ScrollView>
