@@ -183,6 +183,7 @@ public class AddVideo extends AppCompatActivity {
     public void Check() {
         //https://youtu.be/71h8MZshGSs
         vid1_url = evid_url.getText().toString().trim();
+        if(vid1_url.length()>0)
         if (vid1_url.contains(".be/")) {
             vid1_url = vid1_url.split(".be/")[1];
             int ampersandPosition = vid1_url.indexOf('&');

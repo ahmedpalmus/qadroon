@@ -1,9 +1,11 @@
 package com.example.qadroon;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Dialog;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.AsyncTask;
@@ -25,6 +27,7 @@ public class RequestDetails extends AppCompatActivity {
 EditText rep;
     Button del,accept,reject,call;
     String URL = Server.ip + "reply.php";
+    String URL2 = Server.ip + "delrequest.php";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -72,7 +75,23 @@ EditText rep;
         del.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                AlertDialog.Builder alert = new AlertDialog.Builder(RequestDetails.this);
+                alert.setTitle("Deleting your request");
+                alert.setMessage("Are You sure?");
+                alert.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
 
+                        SendDel();
+                    }
+                });
+
+                alert.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                    }
+                });
+                alert.create().show();
             }
         });
         accept.setOnClickListener(new View.OnClickListener() {
@@ -140,6 +159,42 @@ EditText rep;
                 data.put("action", action);
                 data.put("resp", response);
                 String result = con.sendPostRequest(URL, data);
+                return result;
+            }
+
+            @Override
+            protected void onPostExecute(String result) {
+                loadingDialog.dismiss();
+                if (result.isEmpty() || result.equals("Error"))
+                    Toast.makeText(getApplicationContext(), getResources().getString(R.string.check), Toast.LENGTH_LONG).show();
+                else if (result.equals("failure")) {
+                    Toast.makeText(getApplicationContext(), "Try Again", Toast.LENGTH_LONG).show();
+                } else if (result.equalsIgnoreCase("success")) {
+                    Toast.makeText(getApplicationContext(), getResources().getString(R.string.success), Toast.LENGTH_LONG).show();
+                    finish();
+                }
+            }
+        }
+        RegAsync la = new RegAsync();
+        la.execute();
+    }
+    private void SendDel() {
+        class RegAsync extends AsyncTask<String, Void, String> {
+            private Dialog loadingDialog;
+
+            @Override
+            protected void onPreExecute() {
+                super.onPreExecute();
+                loadingDialog = ProgressDialog.show(RequestDetails.this, getResources().getString(R.string.wait), getResources().getString(R.string.connecting));
+            }
+
+            @Override
+            protected String doInBackground(String... params) {
+                Connection con = new Connection();
+                HashMap<String, String> data = new HashMap<>();
+                data.put("req_id", Info.getReq_id());
+
+                String result = con.sendPostRequest(URL2, data);
                 return result;
             }
 
